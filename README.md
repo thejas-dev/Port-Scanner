@@ -16,9 +16,9 @@ Gazillion Port Scanner is a powerful and easy-to-use tool for port scanning. It 
   <h2 align="center">Screen Shot 1</h2>
   <h1 align="center"><img align="center" src="https://ik.imagekit.io/d3kzbpbila/thejashari_NxVvgM4OZ" width="700px" alt="screenshot1"></h1>
   <h2 align="center">Screen Shot 2</h2>
- <h1 align="center"> <img align="center" src="https://ik.imagekit.io/d3kzbpbila/thejashari_ZayGXNkUp" width="700px" alt="screenshot2"></h1>
+ <h1 align="center"> <img align="center" src="https://ik.imagekit.io/d3kzbpbila/thejashari_wRDcd_uH4" width="700px" alt="screenshot2"></h1>
  <h2 align="center">Screen Shot 3</h2>
- <h1 align="center"> <img align="center" src="https://ik.imagekit.io/d3kzbpbila/thejashari_PN0h9Vo47n" width="700px" alt="screenshot3"></h1>
+ <h1 align="center"> <img align="center" src="https://ik.imagekit.io/d3kzbpbila/thejashari_rIOQKvpT8" width="700px" alt="screenshot3"></h1>
 
 
 ## Installation
