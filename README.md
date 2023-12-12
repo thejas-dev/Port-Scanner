@@ -24,8 +24,8 @@ Gazillion Port Scanner is a powerful and easy-to-use tool for port scanning. It 
 ## Installation
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
+    git clone https://github.com/thejas-dev/Port-Scanner.git
+    cd Port-Scanner
     ```
     
 2. **Install dependencies (if any):**
