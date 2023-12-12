@@ -3,6 +3,9 @@ import socket
 import sys
 from urllib.parse import urlsplit
 import threading
+import pyfiglet
+
+ascii_banner = pyfiglet.figlet_format("GAZILLION")
 
 startPort = 1
 endPort = 1000
@@ -44,7 +47,7 @@ def portScan(ip,startPort,endPort):
 			s.settimeout(1)
 			result = s.connect_ex((ip,port))
 			if result == 0:
-				print(f"Port {port} is open")
+				print(f"Port \033[1;33m{port}\033[0m is open")
 			s.close()
 			totalPortsScanned = totalPortsScanned + 1
 	else:
@@ -53,7 +56,7 @@ def portScan(ip,startPort,endPort):
 			s.settimeout(1)
 			result = s.connect_ex((ip,port))
 			if result == 0:
-				print(f"Port {port} is open")
+				print(f"Port \033[1;33m{port}\033[0m is open")
 			s.close()
 			totalPortsScanned = totalPortsScanned + 1
 
@@ -64,7 +67,7 @@ def startThreading(ip,startPort,endPort):
 
 def calculateThreads(domain,startPort,endPort,threads):
 	ip = socket.gethostbyname(domain);
-	print(domain, '=====>', ip);
+	print(domain, '=====>', '\033[1;95m' + ip + '\033[0m');
 	if threads > 1:
 		totalPorts = endPort - startPort + 1
 		if totalPorts > 0:
@@ -125,9 +128,60 @@ for i in range(1,len(sys.argv),2):
 		print('Invalid arguments, use -h to get the manual')
 		break
 	if i+2 == len(sys.argv):
-		print("Domain:", domain)
-		print("Scanning ports:", f'{startPort} - {endPort}')
+		print('=' * 60)
+		print("\033[1;36m" + ascii_banner + "\033[0m")
+		print("\033[1;36m" + " " * 20 +"PORT SCANNER" + "\033[0m")
+		print('=' * 60)
+		print("Domain:", '\033[1;95m' + domain + '\033[0m')
+		print("Scanning ports:", '\033[1;95m' + f'{startPort} - {endPort}' + '\033[0m')
 		if domain != None:
 			calculateThreads(domain,startPort,endPort,threads)
 		else:
 			print("Domain name is incorrect, use -h to get the manual")
+# import threading
+# import socket
+# import sys
+# from urllib.parse import urlsplit
+
+# r = 1
+
+
+# def portscan(port,domain):
+#     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     s.settimeout(1)
+#     con = s.connect_ex((domain,port))
+#     if(con == 0):
+#     	print('Port :',port,"is open.")
+#     s.close()
+    
+# def startThread(domain,startPort,endPort):
+# 	global r
+# 	for x in range(startPort,endPort + 1): 
+# 	    t = threading.Thread(target=portscan,kwargs={'port':x,'domain':domain}) 
+
+# 	    r += 1     
+# 	    t.start()
+
+# for i in range(1,len(sys.argv),2):
+# 	if sys.argv[i] == '-t':
+# 		url_parts = urlsplit(sys.argv[i+1])
+# 		if url_parts.netloc:
+# 			domain = url_parts.netloc
+# 		elif url_parts.path:
+# 			domain = url_parts.path
+# 		else:
+# 			print('Invalid domain, use -h to get the manual')
+# 			break
+# 	elif sys.argv[i] == '-p':
+# 		ports = sys.argv[i+1]
+# 		splitports = ports.split('-')
+# 		if len(splitports) == 1:
+# 			startThread(domain,1,int(splitports[0]))
+# 		elif len(splitports) == 2:
+# 			startThread(domain,int(splitports[0]),int(splitports[1]))
+# 		else:
+# 			print("Invalid port number, use -h to get the manual")
+# 			break
+# 	else:
+# 		print('Invalid arguments, use -h to get the manual')
+# 		break
